@@ -22,7 +22,7 @@ class MCSurface;
 
 namespace FontFactory {
 
-MCTextureFontData generateFont();
+MCTextureFontData generateFontData();
 
 } // namespace FontFactory
 

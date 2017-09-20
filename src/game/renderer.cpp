@@ -144,23 +144,21 @@ void Renderer::loadShaders()
 
 void Renderer::loadFonts()
 {
-    const std::vector<QString> fonts = {"UbuntuMono-R.ttf", "UbuntuMono-B.ttf"};
+    QStringList fonts = {":/fonts/Molot.otf", ":/fonts/FreeMono.ttf"};
     for (auto font : fonts)
     {
-        const QString path =
-            QString(Config::Common::dataPath) + QDir::separator() + "fonts" + QDir::separator() + font;
-        MCLogger().info() << "Loading font " << path.toStdString() << "..";
-
-        QFile fontFile(path);
-        fontFile.open(QFile::ReadOnly);
-        const int appFontId = QFontDatabase::addApplicationFontFromData(fontFile.readAll());
+        const int appFontId = QFontDatabase::addApplicationFont(font);
         if (appFontId < 0)
         {
-            MCLogger().warning() << "Failed to load font " << path.toStdString() << "..";
+            MCLogger().warning() << "Failed to load font " << font.toStdString() << "..";
+        }
+        else
+        {
+            MCLogger().info() << "Loaded font " << QFontDatabase::applicationFontFamilies(appFontId).at(0).toStdString();
         }
     }
 
-    MCAssetManager::instance().textureFontManager().createFontFromData(FontFactory::generateFont());
+    MCAssetManager::instance().textureFontManager().createFontFromData(FontFactory::generateFontData());
 }
 
 void Renderer::setEnabled(bool enable)

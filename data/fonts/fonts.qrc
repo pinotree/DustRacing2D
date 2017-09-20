@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>Molot.otf</file>
+        <file>FreeMono.ttf</file>
+    </qresource>
+</RCC>

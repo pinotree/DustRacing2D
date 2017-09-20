@@ -113,7 +113,7 @@ set(SRC
     ../common/mapbase.cpp
     )
 
-set(RCS ${CMAKE_SOURCE_DIR}/data/icons/icons.qrc)
+set(RCS ${CMAKE_SOURCE_DIR}/data/icons/icons.qrc ${CMAKE_SOURCE_DIR}/data/fonts/fonts.qrc)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 

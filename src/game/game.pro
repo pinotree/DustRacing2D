@@ -345,7 +345,7 @@ SOURCES += \
     STFH/location.cpp \
     STFH/source.cpp \
 
-RESOURCES += ../../data/icons/icons.qrc ../../data/images/editor.qrc
+RESOURCES += ../../data/icons/icons.qrc ../../data/fonts/fonts.qrc ../../data/images/editor.qrc
 RC_FILE = ../../data/icons/WindowsGame.rc
 TRANSLATIONS += \
     translations/dustrac-game_fi.ts \
